@@ -1,0 +1,171 @@
+body{ /*background-color: #ebedf0;*/}
+*{box-sizing: border-box;}
+
+#div-border{
+  border-top: 2px solid #000;
+  width: 80%
+}
+.ul-entidad>li>a:hover{
+  box-shadow: 0 0 11px #E3281E;
+   /*background-color: #E5E7E9;*/
+}
+.ul-entidad>li>a:hover, .ul-entidad>li>a:active{
+/*  box-shadow: 0 0 11px #E3281E;
+  /*background-color: #E3281E;*/
+}
+.ul-entidad>li, ul{
+  list-style: none;
+  padding: 0 10px;
+}
+.ul-entidad>li>a{
+  padding-left: 0px;
+  text-decoration: none;
+  margin-left: 0px;
+}
+.dos{
+  border-left: 4px solid #0A709E;
+}
+.container{
+  width: 1000px;
+  /*background-color: #E5E7E9;*/
+  padding-bottom: 10px;
+  border:1px solid #000;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/****TABLAS*****/
+#tb_persona, #tb_psicologo, #tb_psicologo_modal, #tb_persona_modal{
+  font-size: 0.8rem;
+  /*padding: 1rem;*/
+}
+
+  #tb_persona_wrapper, #tb_psicologo_wrapper{
+     width: 700px;
+     margin-left: auto;
+     margin-right: auto;
+     overflow-x:scroll;
+    padding-top: 20px;
+  }
+  #tb_persona thead, #tb_psicologo thead, #tb_psicologo_modal thead, #tb_persona_modal thead{
+    background-color: #1c2e51;
+    color:#ffffff;
+    text-align: center;
+    }
+  #tb_persona tr, #tb_psicologo tr, #tb_psicologo_modal tr, #tb_persona_modal tr{
+    padding: 0.1rem;
+  }
+  #tb_persona td, #tb_psicologo td, #tb_psicologo_modal td, #tb_persona_modal td{
+    padding: 0.1rem;
+  }
+  div.remove_persona{
+    vertical-align: middle;
+  }
+  div.dt-buttons .btnpersona{
+    background:#1c2e51;
+    color: #ffffff;
+  }
+
+  /*******TABLAS*******/
+.fa-pencil:hover, .fa-trash:hover
+{
+  opacity: 0.4;
+}
+span.a{
+ display: inline; /* the default for span */
+ width: 0px;
+ height: 0px;
+ padding: 0px 10px 0px 10px;
+ /*border: 1px solid blue;
+ background-color: yellow;*/
+}
+/*.remove_psico{
+  text-align: center;
+}*/
+/*.tb_psico_antecedente_thead.tr{
+  text-align: center;
+}*/
+#modal_psicologo div.modal-dialog{
+  /*,#modal_persona div.modal-dialog{*/
+  position:fixed;
+  top:0;
+  right:30px;
+  margin:20px 0 0 0;
+}
+  #modal_persona .modal-dialog{
+    position:fixed;
+    top:0px;
+    right:0px;
+    width: 800px;
+}
+  /*pedido*/
+img.ui-datepicker-trigger{
+  width: 1.4rem;
+  height: 1.6rem;
+}
+/*16/04/2021*/
+footer{
+  position: relative;
+  bottom: 0px;
+  /*background-color: #1c2e51;*/
+  background-color:#ebedf0;
+  /*background-color: #eff2f5;*/
+  width: 100%;
+  height: 6rem;;
+  /*text-align: center;*/
+  margin: 0 auto;
+}
+.espacio-blanco{
+  width:100%;
+  height:50px;
+  display: block;
+}
+/*header{
+  position: relative;
+  top: 0;
+  background: #1c2e51;
+  color: #fff;
+  width: 100%;
+  height: 4rem;
+  text-align: center;
+}
+.espacio-nav{
+  width:100%;
+  height:50px;
+  display: block;
+  background-color:#343A40;
+}*/
+/*20/04/2021*/
+/*.nav-vertical-pedido{
+  position: fixed;
+  left: 40px;
+  top: 50%;
+  bottom: auto;
+  transform: translateY(-50%);
+  z-index: 1;
+
+}*/
+input:-webkit-autofill {
+  -webkit-box-shadow: inset 0 0 0px 9999px white;
+}
+.class-Nfecto{
+border-top-style: hidden;
+border-right-style: hidden;
+border-left-style: hidden;
+}
+.class-Nfecto:focus{
+outline: none !important;
+border-color: #719ECE;
+box-shadow: 0 0 10px #719ECE;
+}
+.form-group {
+  margin-bottom: 0.3rem;
+}
+button[id="btnBuscarCausa"]{
+  margin-top: 0;
+  padding-top: 0;
+  margin-left: 1rem;
+  line-height: 1rem;
+}
