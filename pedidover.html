@@ -1,0 +1,135 @@
+<html lang="en">
+<head>
+	<title>Buscador en Tiempo Real con AJAX</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+	<style>
+		body{
+		background: url("http://localhost:84/marzo-2021/imagen/background.jpg");
+		}
+		.loadingDiv {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+		/*https://loading.io/asset/395170*/
+    background: url('http://localhost:84/marzo-2021/imagen/831.gif') 50% 50% no-repeat rgb(249,249,249);
+    opacity: .8;
+		}
+	</style>
+</head>
+<body>
+	<!-- Menu de navegacion-->
+  <nav id="menu" class="navbar navbar-expand-lg sticky-top navbar-dark" style="background-color: #1C2F50;">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="index.html">Servicio de Psicologia</a>
+          <ul class="navbar-nav mr-auto">
+	            <!--<li class="nav-item active">
+	              <a class="nav-link" href="index_2.html">Home <span class="sr-only">(current)</span></a>
+	            </li>-->
+	            <li class="nav-item">
+	              <a class="nav-link" href="#"></a>
+	            </li>
+	            <li class="nav-item" href="#"></a>>
+	              <!--<a class="nav-link" href="http://localhost/busqueda_ajax/DT_Causas_Pedidos.html">Grilla_CausasPedidos</a>-->
+	            </li>
+          </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" name="search" id="search">
+          <button id="btnEnviar" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+	<!--contenido-->
+		<div class="loadingDiv"></div>
+		<header>
+				<div class="alert alert-info">
+					<h2>Buscador en Tiempo Real con AJAX</h2>
+				</div>
+		</header>
+		<div class="container">
+		<div class="d-flex lign-items-start flex-column">
+				<div class="">
+						<button type="button" class="btn btn-primary" data-toggle="" data-target="#exampleModal" id="btn_buscar">
+						 Buscar
+						</button>
+					</div>
+				<div class="w-50 mh-50">
+					<table id="tablapersona" class="table table-striped table-bordered">
+								<thead>
+										<tr>
+											<th>PedNro.</th>
+											<th>PedAñio</th>
+											<th>PedEstado</th>
+											<th>Pedobservacion</th>
+											<th>PedFechaini</th>
+											<th>CausaNro</th>
+											<th>CauAñio</th>
+											<th>Tcc_codigo</th>
+											<th>Orgcodigo</th>
+											<th>Caratula</th>
+											</tr>
+								</thead>
+						</table>
+				</div>
+		</div>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript" src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			var $loading = $('.loadingDiv').hide();
+			$(document)
+			  .ajaxStart(function () {
+			    $loading.show();
+			  })
+			  .ajaxStop(function () {
+			    $loading.hide();
+			  });
+			/*$(window).load(function() {
+    		$(".loader").fadeOut("slow");
+			});*/
+			var tablapersona = $('#tablapersona').DataTable( {
+		  Dom: 'Bfrtip',
+		    select: true,
+		    "ajax":{
+		    "url": "controlador/causas_pedidos.php",
+				"dataType": "json",
+		    "dataSrc":""
+					},
+
+		    "columnDefs":[
+		      {"targets": [0,1],
+		      "visible": true,
+		    }],
+//pednro, pedanio, pedestado, pedobservacion, pedidofechaini, caunro, cauanio, tcc_codigo, orgcodigo, caucaratula, matnombre, pernombre
+		    "columns":[
+				  {"data": "pednro"},
+					{"data": "pedanio"},
+					{"data": "pedestado"},
+					{"data": "pedobservacion"},
+					{"data": "pedfechaini"},
+					{"data": "caunro"},
+					{"data": "cauanio"},
+					{"data": "tcc_codigo"},
+		 			{"data": "orgcodigo"},
+		      {"data": "caucaratula"}
+					],
+		      "order": [[ 0, "desc" ]]
+		  });
+
+		});
+	</script>
+	</body>
+</html>
